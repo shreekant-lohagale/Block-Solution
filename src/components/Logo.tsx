@@ -1,5 +1,11 @@
 
 import type { SVGProps } from 'react';
+import * as React from "react";
+import Image from "next/image";
+
+interface LogoProps {
+  className?: string;
+}
 
 export function Logo(props: SVGProps<SVGSVGElement>) {
   return (
@@ -31,5 +37,7 @@ export function Logo(props: SVGProps<SVGSVGElement>) {
         fill="none"
       />
     </svg>
+    
   );
 }
+

@@ -31,11 +31,6 @@ export function Footer() {
           </div>
           <div>
             <h3 className="font-semibold mb-2 text-foreground">Connect With Us</h3>
-            <div className="flex space-x-4">
-              <Link href="#" aria-label="Facebook" className="text-muted-foreground hover:text-primary transition-colors"><Facebook size={20} /></Link>
-              <Link href="#" aria-label="Twitter" className="text-muted-foreground hover:text-primary transition-colors"><Twitter size={20} /></Link>
-              <Link href="#" aria-label="LinkedIn" className="text-muted-foreground hover:text-primary transition-colors"><Linkedin size={20} /></Link>
-            </div>
             <p className="text-sm text-muted-foreground mt-2">
               123 Blockchain Avenue, Crypto City, ETH 12345
             </p>

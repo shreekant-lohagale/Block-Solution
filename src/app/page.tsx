@@ -1,12 +1,20 @@
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
-import { ArrowRight, Code, Lightbulb, ShieldCheck } from "lucide-react";
+import { ArrowRight } from "lucide-react";
 import Image from "next/image";
 import Link from "next/link";
+
+// Import image modules
+import OurMissionImg from '@/img/Our Mission.jpg';
+import SmartContractImg from '@/img/Smart Contract Development.jpg';
+import AuditingImg from '@/img/Smart Contract Auditing.jpg';
+import ConsultingImg from '@/img/Blockchain Consulting.jpg';
+import InnovationImg from '@/img/Driving Blockchain Innovation.jpg';
 
 export default function HomePage() {
   return (
     <div className="space-y-16 md:space-y-24">
+
       {/* Hero Section */}
       <section className="text-center py-16 md:py-24 bg-gradient-to-br from-primary/10 via-background to-background rounded-xl shadow-lg">
         <div className="container mx-auto px-4">
@@ -31,13 +39,13 @@ export default function HomePage() {
       <section className="container mx-auto px-4 text-center">
         <h2 className="text-3xl md:text-4xl font-bold font-headline mb-4 text-foreground">Our Mission</h2>
         <Image 
-            src={require("@/img/Our Mission.jpg")}
-            alt="Team working on blockchain"
-            width={800}
-            height={400}
-            className="rounded-lg shadow-md mx-auto mb-6"
-            data-ai-hint="team collaboration"
-          />
+          src={OurMissionImg.src}
+          alt="Team working on blockchain"
+          width={800}
+          height={400}
+          className="rounded-lg shadow-md mx-auto mb-6"
+          data-ai-hint="team collaboration"
+        />
         <p className="text-md md:text-lg text-foreground/70 max-w-3xl mx-auto">
           At Block Solution Labs, our mission is to demystify blockchain technology and make its transformative power accessible to all. We are committed to developing robust, scalable, and secure Web3 solutions that drive innovation and create lasting value for our clients and the broader digital ecosystem.
         </p>
@@ -50,7 +58,7 @@ export default function HomePage() {
           <Card className="hover:shadow-xl transition-shadow duration-300 animate-slide-in-from-left">
             <CardHeader>
               <Image 
-                src={require("@/img/Smart Contract Development.jpg")}
+                src={SmartContractImg.src}
                 alt="Smart Contract Development"
                 width={400}
                 height={200}
@@ -66,10 +74,11 @@ export default function HomePage() {
               </Button>
             </CardContent>
           </Card>
+
           <Card className="hover:shadow-xl transition-shadow duration-300 animate-slide-in-from-bottom">
             <CardHeader>
               <Image 
-                src={require("@/img/Smart Contract Auditing.jpg")}
+                src={AuditingImg.src}
                 alt="Blockchain Auditing"
                 width={400}
                 height={200}
@@ -85,10 +94,11 @@ export default function HomePage() {
               </Button>
             </CardContent>
           </Card>
+
           <Card className="hover:shadow-xl transition-shadow duration-300 animate-slide-in-from-right">
             <CardHeader>
               <Image 
-                src={require("@/img/Blockchain Consulting.jpg")}
+                src={ConsultingImg.src}
                 alt="Web3 Consulting"
                 width={400}
                 height={200}
@@ -108,7 +118,7 @@ export default function HomePage() {
       </section>
 
       {/* Innovation Highlight */}
-       <section className="container mx-auto px-4">
+      <section className="container mx-auto px-4">
         <div className="bg-card p-8 md:p-12 rounded-xl shadow-lg flex flex-col md:flex-row items-center gap-8">
           <div className="flex-1">
             <h2 className="text-3xl md:text-4xl font-bold font-headline mb-4 text-foreground">Driving Blockchain Innovation</h2>
@@ -120,8 +130,8 @@ export default function HomePage() {
             </Button>
           </div>
           <div className="flex-1">
-             <Image 
-                src={require("@/img/Driving Blockchain Innovation.jpg")}
+            <Image 
+              src={InnovationImg.src}
               alt="Blockchain innovation abstract"
               width={600}
               height={400}
@@ -134,45 +144,3 @@ export default function HomePage() {
     </div>
   );
 }
-
-// Add some basic CSS for animations if not already in globals
-// You can expand on these or use a library like framer-motion
-// For simplicity, these are illustrative. `tailwindcss-animate` handles some.
-// Consider adding these to globals.css or a dedicated animation css file.
-// @keyframes fadeInDown { from { opacity: 0; transform: translateY(-20px); } to { opacity: 1; transform: translateY(0); } }
-// @keyframes fadeInUp { from { opacity: 0; transform: translateY(20px); } to { opacity: 1; transform: translateY(0); } }
-// .animate-fade-in-down { animation: fadeInDown 0.5s ease-out forwards; }
-// .animate-fade-in-up { animation: fadeInUp 0.5s ease-out forwards; }
-// .animation-delay-300 { animation-delay: 0.3s; }
-// .animation-delay-600 { animation-delay: 0.6s; }
-
-// For slide-in, using tailwindcss-animate classes (data-[state=open]:animate-in data-[state=closed]:animate-out ...)
-// For simple on-load animations, you might need to trigger them.
-// These illustrative classes provide basic entry animations.
-// .animate-slide-in-from-left { animation: slideInFromLeft 0.7s ease-out forwards; opacity: 0; }
-// .animate-slide-in-from-right { animation: slideInFromRight 0.7s ease-out forwards; opacity: 0; }
-// .animate-slide-in-from-bottom { animation: slideInFromBottom 0.7s ease-out forwards; opacity: 0; }
-// @keyframes slideInFromLeft { from { transform: translateX(-50px); opacity: 0; } to { transform: translateX(0); opacity: 1; } }
-// @keyframes slideInFromRight { from { transform: translateX(50px); opacity: 0; } to { transform: translateX(0); opacity: 1; } }
-// @keyframes slideInFromBottom { from { transform: translateY(50px); opacity: 0; } to { transform: translateY(0); opacity: 1; } }
-// This is better handled by intersection observer or a library for scroll-triggered animations.
-// For now, assuming these are applied for initial load or using tailwindcss-animate capabilities if available.
-// The current setup uses tailwindcss-animate which is good.
-// Custom animations added here for demonstration. `tailwindcss-animate` is configured.
-// To make them work on load without interaction, you might need JS or specific setup.
-// We will rely on `tailwindcss-animate` for what it provides for now.
-// The classes provided above might need manual animation setup.
-// Let's assume `tailwindcss-animate` provides animate-in, fade-in-0, slide-in-from-left-2 etc. which are used by shadcn.
-// For simple on-load:
-// Add in tailwind.config.js keyframes:
-// fadeIn: { '0%': { opacity: '0' }, '100%': { opacity: '1' } },
-// And animation:
-// fadeIn: 'fadeIn 1s ease-out',
-// Then use `animate-fadeIn` class.
-
-// The prompt mentions `tailwindcss-animate` is available, which often means classes for entry animations like `animate-in`, `fade-in`, `slide-in-from-*`.
-// I've used placeholder class names like `animate-fade-in-down`. These would need to be defined in `tailwind.config.js` or `globals.css`
-// For instance, in `tailwind.config.js`:
-// theme: { extend: { keyframes: { 'fade-in-down': { ... } }, animation: { 'fade-in-down': 'fade-in-down 0.5s ease-out' } } }
-// This is done for illustration. `tailwindcss-animate` provides similar functionalities.
-

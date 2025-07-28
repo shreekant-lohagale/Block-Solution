@@ -6,8 +6,8 @@ import { Footer } from '@/components/layout/Footer';
 import { Toaster } from "@/components/ui/toaster";
 
 export const metadata: Metadata = {
-  title: 'Block Solution Labs - Innovating Blockchain Solutions',
-  description: 'Block Solution Labs is dedicated to building innovative solutions on blockchain technology and providing expert Web3 services.',
+  title: 'BlockSolution Labs - Innovating Blockchain Solutions',
+  description: 'BlockSolution Labs is dedicated to building innovative solutions on blockchain technology and providing expert Web3 services.',
 };
 
 export default function RootLayout({
