@@ -7,4 +7,4 @@ export const NAV_LINKS = [
   { href: "/contact", label: "Contact Us" },
 ];
 
-export const SITE_NAME = "BlockSolution Labs";
+export const SITE_NAME = "NovaStack Solutions";

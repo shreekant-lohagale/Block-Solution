@@ -65,7 +65,8 @@ export default function InnovationsPage() {
         <h1 className="text-4xl md:text-5xl font-bold font-headline mb-4 text-primary">
           Our Innovations
         </h1>
-        <p className="text-lg md:text-xl text-foreground/80 max-w-2xl mx-auto">
+        {/* Adjusted paragraph text color for dark mode */}
+        <p className="text-lg md:text-xl text-slate-300 max-w-2xl mx-auto">
           Discover the cutting-edge projects and research we're working on to
           push the boundaries of blockchain technology.
         </p>
@@ -76,7 +77,8 @@ export default function InnovationsPage() {
           {innovations.map((innovation, index) => (
             <Card
               key={index}
-              className="flex flex-col overflow-hidden shadow-lg hover:shadow-2xl transition-shadow duration-300"
+              // Replaced shadow with our dark theme's background and border style
+              className="flex flex-col overflow-hidden bg-slate-800/80 border border-slate-700 transition-all duration-300 hover:border-primary/50"
             >
               <div className="relative h-64 w-full">
                 <Image
@@ -84,7 +86,7 @@ export default function InnovationsPage() {
                   alt={innovation.title}
                   fill
                   style={{ objectFit: "cover" }}
-                  className="transition-transform duration-500 hover:scale-105"
+                  className="transition-transform duration-500 group-hover:scale-105" // Use group-hover if Card is the group
                   data-ai-hint={innovation.imageHint}
                 />
               </div>
@@ -97,6 +99,7 @@ export default function InnovationsPage() {
                     {innovation.title}
                   </CardTitle>
                 </div>
+                {/* The Badge component will automatically use dark theme variants from your CSS 
                 <Badge
                   variant={
                     innovation.status === "Live" ? "default" : "secondary"
@@ -104,18 +107,21 @@ export default function InnovationsPage() {
                   className={
                     innovation.status === "Live"
                       ? "bg-accent text-accent-foreground"
-                      : ""
+                      // Non-live badges will use the themed "secondary" variant
+                      : "border-transparent"
                   }
                 >
                   {innovation.status}
-                </Badge>
+                </Badge>*/}
               </CardHeader>
               <CardContent className="flex-grow">
-                <CardDescription className="text-foreground/70 mb-4">
+                 {/* Adjusted description text color */}
+                <CardDescription className="text-slate-400 mb-4">
                   {innovation.description}
                 </CardDescription>
                 <div className="flex flex-wrap gap-2">
                   {innovation.tags.map((tag) => (
+                    // The "outline" badge will also use dark theme variables
                     <Badge key={tag} variant="outline" className="text-sm">
                       {tag}
                     </Badge>

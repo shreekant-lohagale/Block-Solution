@@ -10,7 +10,6 @@ import {
   CheckCircle,
   Code,
   MessageSquare,
-  Search,
   ShieldCheck,
   Users,
   Lightbulb,
@@ -110,7 +109,7 @@ const services = [
 const testimonials = [
   {
     quote:
-      "Block Solution Labs delivered an impeccable smart contract for our DeFi project. Their attention to detail and security expertise is top-notch.",
+      "NovaStack Solutions delivered an impeccable smart contract for our DeFi project. Their attention to detail and security expertise is top-notch.",
     name: "Alice DeFi CEO",
     company: "FutureFi Corp",
     image: "https://placehold.co/100x100.png",
@@ -118,7 +117,7 @@ const testimonials = [
   },
   {
     quote:
-      "The blockchain consultation provided by Block Solution Labs was invaluable in shaping our Web3 strategy. Highly recommended!",
+      "The blockchain consultation provided by NovaStack Solutions was invaluable in shaping our Web3 strategy. Highly recommended!",
     name: "Bob Innovator",
     company: "NextGen Startups",
     image: "https://placehold.co/100x100.png",
@@ -126,7 +125,7 @@ const testimonials = [
   },
   {
     quote:
-      "Their auditing team found critical vulnerabilities we missed. Block Solution Labs saved us from a potential disaster.",
+      "Their auditing team found critical vulnerabilities we missed. NovaStack Solutions saved us from a potential disaster.",
     name: "Carol SecureAdmin",
     company: "SafeToken Ltd.",
     image: "https://placehold.co/100x100.png",
@@ -141,16 +140,19 @@ export default function ServicesPage() {
         <h1 className="text-4xl md:text-5xl font-bold font-headline mb-4 text-primary">
           Our Web3 Services
         </h1>
-        <p className="text-lg md:text-xl text-foreground/80 max-w-2xl mx-auto">
+        {/* Adjusted text color for dark mode */}
+        <p className="text-lg md:text-xl text-slate-300 max-w-2xl mx-auto">
           We offer a comprehensive suite of blockchain services to bring your Web3 vision to life.
         </p>
       </section>
 
-      {services.map((service) => (
+      {services.map((service, index) => (
         <section key={service.id} id={service.id} className="scroll-mt-20">
-          <Card className="overflow-hidden shadow-lg hover:shadow-2xl transition-shadow duration-300">
-            <div className="grid md:grid-cols-2">
-              <div className="p-6 md:p-8">
+          {/* Styled the service card for dark theme */}
+          <Card className={`overflow-hidden bg-slate-800/60 border border-slate-700 transition-all duration-300 hover:border-primary/50`}>
+            <div className={`grid md:grid-cols-2`}>
+              {/* Swapped order for visual variety on every other card */}
+              <div className={`p-6 md:p-8 ${index % 2 === 1 ? 'md:order-last' : ''}`}>
                 <div className="flex items-center gap-3 mb-4">
                   <div className="bg-primary/10 p-3 rounded-md w-fit">
                     <service.icon className="h-8 w-8 text-primary" />
@@ -159,13 +161,13 @@ export default function ServicesPage() {
                     {service.title}
                   </CardTitle>
                 </div>
-                <CardDescription className="text-md text-foreground/70 mb-6">
+                <CardDescription className="text-md text-slate-400 mb-6">
                   {service.description}
                 </CardDescription>
-                <h4 className="font-semibold mb-2 text-foreground">Key Features:</h4>
+                <h4 className="font-semibold mb-2 text-slate-100">Key Features:</h4>
                 <ul className="space-y-2 mb-6">
-                  {service.features.map((feature, index) => (
-                    <li key={index} className="flex items-center gap-2 text-sm text-foreground/70">
+                  {service.features.map((feature, idx) => (
+                    <li key={idx} className="flex items-center gap-2 text-sm text-slate-400">
                       <CheckCircle className="h-4 w-4 text-accent flex-shrink-0" />
                       {feature}
                     </li>
@@ -178,7 +180,7 @@ export default function ServicesPage() {
                   alt={service.title}
                   fill
                   style={{ objectFit: "cover" }}
-                  className="transition-transform duration-500 hover:scale-105"
+                  className="transition-transform duration-500 group-hover:scale-105"
                   data-ai-hint={service.imageHint}
                 />
               </div>
@@ -188,22 +190,23 @@ export default function ServicesPage() {
       ))}
 
       <section>
-        <h2 className="text-3xl md:text-4xl font-bold font-headline mb-8 text-center text-foreground">
+        <h2 className="text-3xl md:text-4xl font-bold font-headline mb-8 text-center text-slate-100">
           What Our Clients Say
         </h2>
         <div className="grid md:grid-cols-3 gap-8">
           {testimonials.map((testimonial, index) => (
+            // Styled the testimonial card for dark theme
             <Card
               key={index}
-              className="flex flex-col shadow-lg hover:shadow-xl transition-shadow duration-300"
+              className="flex flex-col bg-slate-800/80 border border-slate-700 transition-all duration-300 hover:border-primary/50"
             >
               <CardHeader className="flex-grow">
                 <MessageSquare className="h-8 w-8 text-accent mb-4" />
-                <CardDescription className="italic text-foreground/70">
+                <CardDescription className="italic text-slate-400">
                   "{testimonial.quote}"
                 </CardDescription>
               </CardHeader>
-              <CardFooter className="flex items-center gap-4 border-t pt-4">
+              <CardFooter className="flex items-center gap-4 border-t border-slate-700 pt-4">
                 <Image
                   src={testimonial.image}
                   alt={testimonial.name}
@@ -213,7 +216,7 @@ export default function ServicesPage() {
                   data-ai-hint={testimonial.imageHint}
                 />
                 <div>
-                  <p className="font-semibold text-sm text-foreground">{testimonial.name}</p>
+                  <p className="font-semibold text-sm text-slate-200">{testimonial.name}</p>
                   <p className="text-xs text-muted-foreground">{testimonial.company}</p>
                 </div>
               </CardFooter>

@@ -1,4 +1,3 @@
-
 "use client";
 
 import { zodResolver } from "@hookform/resolvers/zod";
@@ -47,7 +46,6 @@ export default function ContactPage() {
     toast({
       title: "Message Sent!",
       description: "Thank you for reaching out. We'll get back to you soon.",
-      variant: "default",
     });
     form.reset();
   }
@@ -56,13 +54,15 @@ export default function ContactPage() {
     <div className="space-y-16">
       <section className="text-center">
         <h1 className="text-4xl md:text-5xl font-bold font-headline mb-4 text-primary">Get in Touch</h1>
-        <p className="text-lg md:text-xl text-foreground/80 max-w-2xl mx-auto">
+        {/* Adjusted text color for readability */}
+        <p className="text-lg md:text-xl text-slate-300 max-w-2xl mx-auto">
           We're here to help and answer any question you might have. We look forward to hearing from you!
         </p>
       </section>
 
       <section className="grid md:grid-cols-2 gap-12 items-start">
-        <Card className="shadow-xl">
+        {/* Styled the form card for dark theme */}
+        <Card className="bg-slate-800/80 border border-slate-700">
           <CardHeader>
             <CardTitle className="font-headline text-2xl flex items-center gap-2">
               <Send className="h-6 w-6 text-primary" /> Send Us a Message
@@ -136,42 +136,43 @@ export default function ContactPage() {
         </Card>
 
         <div className="space-y-8">
-          <Card className="shadow-xl">
+          {/* Styled the info cards for dark theme */}
+          <Card className="bg-slate-800/80 border border-slate-700">
             <CardHeader>
               <CardTitle className="font-headline text-2xl">Contact Information</CardTitle>
             </CardHeader>
-            <CardContent className="space-y-4 text-foreground/80">
-              <div className="flex items-start gap-3">
+            <CardContent className="space-y-4 text-slate-400">
+              <div className="flex items-start gap-4">
                 <MapPin className="h-6 w-6 text-primary mt-1 flex-shrink-0" />
                 <div>
-                  <h3 className="font-semibold text-foreground">Our Office</h3>
-                  <p>Sunshine Complex, Office No. 41, Near Nalasopara Esat Station</p>
-                  <p>Opp Sunshine Hieghts, Maharashtra 401209</p>
+                  <h3 className="font-semibold text-slate-100">Our Office</h3>
+                  <p>Sunshine Complex, Office No. 41, Near Nalasopara East Station</p>
+                  <p>Opp Sunshine Heights, Maharashtra 401209</p>
                 </div>
               </div>
-              <div className="flex items-start gap-3">
+              <div className="flex items-start gap-4">
                 <Mail className="h-6 w-6 text-primary mt-1 flex-shrink-0" />
                 <div>
-                  <h3 className="font-semibold text-foreground">Email Us</h3>
-                  <a href="mailto:contact@blocksolutionlabs.com" className="hover:text-primary transition-colors">contact@blocksolutionlabs.com</a>
+                  <h3 className="font-semibold text-slate-100">Email Us</h3>
+                  <a href="novastacksolution@gmail.com" className="hover:text-primary transition-colors">contact@blocksolutionlabs.com</a>
                 </div>
               </div>
-              <div className="flex items-start gap-3">
+              <div className="flex items-start gap-4">
                 <Phone className="h-6 w-6 text-primary mt-1 flex-shrink-0" />
                 <div>
-                  <h3 className="font-semibold text-foreground">Call Us</h3>
+                  <h3 className="font-semibold text-slate-100">Call Us</h3>
                   <p>022-50333576</p>
                 </div>
               </div>
             </CardContent>
           </Card>
-          <Card className="shadow-xl">
+          <Card className="bg-slate-800/80 border border-slate-700">
             <CardHeader>
               <CardTitle className="font-headline text-2xl">Business Hours</CardTitle>
             </CardHeader>
-            <CardContent className="space-y-2 text-foreground/80">
-              <p><span className="font-semibold text-foreground">Monday - Friday:</span> 9:00 AM - 6:00 PM (EST)</p>
-              <p><span className="font-semibold text-foreground">Saturday - Sunday:</span> Closed</p>
+            <CardContent className="space-y-2 text-slate-400">
+              <p><span className="font-semibold text-slate-200">Monday - Friday:</span> 9:00 AM - 6:00 PM</p>
+              <p><span className="font-semibold text-slate-200">Saturday - Sunday:</span> Closed</p>
             </CardContent>
           </Card>
         </div>

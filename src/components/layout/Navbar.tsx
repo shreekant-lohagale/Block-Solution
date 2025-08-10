@@ -1,4 +1,3 @@
-
 "use client";
 
 import Link from 'next/link';
@@ -16,7 +15,8 @@ export function Navbar() {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = React.useState(false);
 
   return (
-    <header className="bg-background/80 backdrop-blur-md sticky top-0 z-50 border-b">
+    // Updated header to use a dark, semi-transparent background and a subtle bottom border
+    <header className="bg-slate-900/80 backdrop-blur-md sticky top-0 z-50 border-b border-slate-800">
       <nav className="container mx-auto px-4 h-16 flex items-center justify-between">
         <Link href="/" className="flex items-center gap-2 text-xl font-bold text-primary hover:text-primary/80 transition-colors">
           <Logo className="h-7 w-7" /> {/* Use the Logo component */}
@@ -27,8 +27,9 @@ export function Navbar() {
         <div className="hidden md:flex items-center space-x-2">
           {NAV_LINKS.map((link) => (
             <Button key={link.href} variant="ghost" asChild
+              // Adjusted text colors for dark mode, keeping the primary color for the active link
               className={cn(
-                "text-foreground/70 hover:text-foreground hover:bg-primary/10",
+                "text-slate-400 hover:text-slate-100 hover:bg-primary/10",
                 pathname === link.href && "text-primary font-semibold"
               )}
             >
@@ -44,16 +45,18 @@ export function Navbar() {
         <div className="md:hidden">
           <Sheet open={isMobileMenuOpen} onOpenChange={setIsMobileMenuOpen}>
             <SheetTrigger asChild>
-              <Button variant="outline" size="icon">
+              {/* Styled the mobile menu trigger button for a dark theme */}
+              <Button variant="outline" size="icon" className="border-slate-700 text-slate-300 hover:bg-slate-800 hover:text-slate-100">
                 <Menu className="h-6 w-6" />
                 <span className="sr-only">Open menu</span>
               </Button>
             </SheetTrigger>
-            <SheetContent side="right" className="w-3/4 bg-background">
+            {/* Set the slide-out menu background to dark with a border */}
+            <SheetContent side="right" className="w-3/4 bg-slate-900 border-l border-slate-800">
               <SheetTitle className="sr-only">Mobile Navigation Menu</SheetTitle>
-              <div className="flex flex-col space-y-4 p-6 pt-12"> {/* Added pt-12 to avoid overlap if title were visible */}
+              <div className="flex flex-col space-y-4 p-6 pt-12">
               <Link href="/" className="flex items-center gap-2 text-lg font-bold text-primary mb-4" onClick={() => setIsMobileMenuOpen(false)}>
-                  <Logo className="h-6 w-6" /> {/* Use the Logo component */}
+                  <Logo className="h-6 w-6" /> 
                   <span className="font-headline">{SITE_NAME}</span>
                 </Link>
                 {NAV_LINKS.map((link) => (
@@ -61,8 +64,9 @@ export function Navbar() {
                     key={link.href} 
                     variant="ghost" 
                     asChild
+                    // Adjusted mobile link colors for readability
                     className={cn(
-                      "justify-start text-lg py-3",
+                      "justify-start text-lg py-3 text-slate-300 hover:text-slate-50",
                       pathname === link.href && "text-primary font-semibold bg-primary/10"
                     )}
                     onClick={() => setIsMobileMenuOpen(false)}
