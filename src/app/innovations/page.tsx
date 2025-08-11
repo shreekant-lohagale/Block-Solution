@@ -13,7 +13,7 @@ import { Cpu, GitBranch, Layers, Zap } from "lucide-react";
 import identityImg from "@/img/Decentralized Identity Protocol.jpg";
 import aiAuditImg from "@/img/AI-Powered.jpg";
 import crossChainImg from "@/img/Cross-Chain.jpg";
-import greenChainImg from "@/img/Cross-Chain.jpg"; // You reused Cross-Chain.jpg — consider replacing
+import greenChainImg from "@/img/Sustainable Blockchain Consensus Algorithm.jpg"; // You reused Cross-Chain.jpg — consider replacing
 
 const innovations = [
   {

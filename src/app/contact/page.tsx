@@ -62,82 +62,9 @@ export default function ContactPage() {
 
       <section className="grid md:grid-cols-2 gap-12 items-start">
         {/* Styled the form card for dark theme */}
-        <Card className="bg-slate-800/80 border border-slate-700">
-          <CardHeader>
-            <CardTitle className="font-headline text-2xl flex items-center gap-2">
-              <Send className="h-6 w-6 text-primary" /> Send Us a Message
-            </CardTitle>
-          </CardHeader>
-          <CardContent>
-            <Form {...form}>
-              <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-6">
-                <FormField
-                  control={form.control}
-                  name="name"
-                  render={({ field }) => (
-                    <FormItem>
-                      <FormLabel>Full Name</FormLabel>
-                      <FormControl>
-                        <Input placeholder="John Doe" {...field} />
-                      </FormControl>
-                      <FormMessage />
-                    </FormItem>
-                  )}
-                />
-                <FormField
-                  control={form.control}
-                  name="email"
-                  render={({ field }) => (
-                    <FormItem>
-                      <FormLabel>Email Address</FormLabel>
-                      <FormControl>
-                        <Input type="email" placeholder="you@example.com" {...field} />
-                      </FormControl>
-                      <FormMessage />
-                    </FormItem>
-                  )}
-                />
-                <FormField
-                  control={form.control}
-                  name="subject"
-                  render={({ field }) => (
-                    <FormItem>
-                      <FormLabel>Subject</FormLabel>
-                      <FormControl>
-                        <Input placeholder="Inquiry about Smart Contracts" {...field} />
-                      </FormControl>
-                      <FormMessage />
-                    </FormItem>
-                  )}
-                />
-                <FormField
-                  control={form.control}
-                  name="message"
-                  render={({ field }) => (
-                    <FormItem>
-                      <FormLabel>Message</FormLabel>
-                      <FormControl>
-                        <Textarea
-                          placeholder="Tell us more about your project or question..."
-                          className="min-h-[120px]"
-                          {...field}
-                        />
-                      </FormControl>
-                      <FormMessage />
-                    </FormItem>
-                  )}
-                />
-                <Button type="submit" className="w-full bg-accent hover:bg-accent/90 text-accent-foreground" disabled={form.formState.isSubmitting}>
-                  {form.formState.isSubmitting ? "Sending..." : "Send Message"}
-                </Button>
-              </form>
-            </Form>
-          </CardContent>
-        </Card>
-
         <div className="space-y-8">
           {/* Styled the info cards for dark theme */}
-          <Card className="bg-slate-800/80 border border-slate-700">
+          <Card className="bg-slate-800/80 border border-slate-700 ">
             <CardHeader>
               <CardTitle className="font-headline text-2xl">Contact Information</CardTitle>
             </CardHeader>
@@ -154,7 +81,7 @@ export default function ContactPage() {
                 <Mail className="h-6 w-6 text-primary mt-1 flex-shrink-0" />
                 <div>
                   <h3 className="font-semibold text-slate-100">Email Us</h3>
-                  <a href="novastacksolution@gmail.com" className="hover:text-primary transition-colors">contact@blocksolutionlabs.com</a>
+                  <a href="mailto:novastacksolution@gmail.com" className="hover:text-primary transition-colors">novastacksolution@gmail.com</a>
                 </div>
               </div>
               <div className="flex items-start gap-4">

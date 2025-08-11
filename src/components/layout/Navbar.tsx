@@ -36,9 +36,6 @@ export function Navbar() {
               <Link href={link.href}>{link.label}</Link>
             </Button>
           ))}
-           <Button asChild variant="default" className="bg-accent hover:bg-accent/90 text-accent-foreground">
-             <Link href="/contact">Get a Quote</Link>
-           </Button>
         </div>
 
         {/* Mobile Navigation */}

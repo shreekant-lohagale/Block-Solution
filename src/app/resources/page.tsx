@@ -141,14 +141,6 @@ export default function ResourcesPage() {
           ))}
         </div>
       </section>
-
-      <section className="text-center mt-12">
-        {/* Adjusted note text color */}
-        <p className="text-slate-500 text-sm">
-          Note: Article detail pages are illustrative. Clicking "Read More"
-          will lead to a 404 or a generic page for this demo.
-        </p>
-      </section>
     </div>
   );
 }

@@ -40,22 +40,22 @@ const services = [
     image: smartContractImg,
     imageHint: "code screen",
   },
-  {
-    id: "auditing",
-    icon: ShieldCheck,
-    title: "Smart Contract Auditing",
-    description:
-      "Our comprehensive auditing services identify vulnerabilities and ensure the security and reliability of your smart contracts. We provide detailed reports and recommendations to mitigate risks.",
-    features: [
-      "Manual Code Review",
-      "Automated Testing",
-      "Vulnerability Assessment",
-      "Gas Usage Analysis",
-      "Security Best Practices",
-    ],
-    image: auditingImg,
-    imageHint: "digital security",
-  },
+  // {
+  //   id: "auditing",
+  //   icon: ShieldCheck,
+  //   title: "Smart Contract Auditing",
+  //   description:
+  //     "Our comprehensive auditing services identify vulnerabilities and ensure the security and reliability of your smart contracts. We provide detailed reports and recommendations to mitigate risks.",
+  //   features: [
+  //     "Manual Code Review",
+  //     "Automated Testing",
+  //     "Vulnerability Assessment",
+  //     "Gas Usage Analysis",
+  //     "Security Best Practices",
+  //   ],
+  //   image: auditingImg,
+  //   imageHint: "digital security",
+  // },
   {
     id: "consulting",
     icon: Users,
@@ -189,41 +189,7 @@ export default function ServicesPage() {
         </section>
       ))}
 
-      <section>
-        <h2 className="text-3xl md:text-4xl font-bold font-headline mb-8 text-center text-slate-100">
-          What Our Clients Say
-        </h2>
-        <div className="grid md:grid-cols-3 gap-8">
-          {testimonials.map((testimonial, index) => (
-            // Styled the testimonial card for dark theme
-            <Card
-              key={index}
-              className="flex flex-col bg-slate-800/80 border border-slate-700 transition-all duration-300 hover:border-primary/50"
-            >
-              <CardHeader className="flex-grow">
-                <MessageSquare className="h-8 w-8 text-accent mb-4" />
-                <CardDescription className="italic text-slate-400">
-                  "{testimonial.quote}"
-                </CardDescription>
-              </CardHeader>
-              <CardFooter className="flex items-center gap-4 border-t border-slate-700 pt-4">
-                <Image
-                  src={testimonial.image}
-                  alt={testimonial.name}
-                  width={48}
-                  height={48}
-                  className="rounded-full"
-                  data-ai-hint={testimonial.imageHint}
-                />
-                <div>
-                  <p className="font-semibold text-sm text-slate-200">{testimonial.name}</p>
-                  <p className="text-xs text-muted-foreground">{testimonial.company}</p>
-                </div>
-              </CardFooter>
-            </Card>
-          ))}
-        </div>
-      </section>
+
     </div>
   );
 }
