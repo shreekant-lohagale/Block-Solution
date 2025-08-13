@@ -33,13 +33,10 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en" suppressHydrationWarning>
-      <head>
-        {/* The head tag is empty, which is fine. Next.js will inject what it needs. */}
-      </head>
-      <body 
+      <body
         className={cn(
           "font-body bg-background text-foreground antialiased flex flex-col min-h-screen",
-          fontInter.variable, 
+          fontInter.variable,
           fontManrope.variable
         )}
       >
