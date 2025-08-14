@@ -73,7 +73,7 @@ export default function InnovationsPage() {
   useEffect(() => {
     if (!isClient) return;
 
-    let smootherInstance_1;
+    let smootherInstance;
 
     // Use gsap.context() for better cleanup
     let ctx = gsap.context(() => {
@@ -81,7 +81,7 @@ export default function InnovationsPage() {
       gsap.delayedCall(0.5, () => {
         ScrollTrigger.refresh();
         // Now create smoother instance
-        smootherInstance_1 = ScrollSmoother.create({
+        smootherInstance = ScrollSmoother.create({
           wrapper: "#smooth-wrapper",
           content: "#smooth-content",
           smooth: 1.2,
@@ -108,7 +108,7 @@ export default function InnovationsPage() {
 
     return () => {
       // Clean up the smoother instance and revert the context when the component unmounts
-      if (smootherInstance_1) smootherInstance_1.kill();
+      if (smootherInstance) smootherInstance.kill();
       ctx.revert();
     };
   }, [isClient]);
