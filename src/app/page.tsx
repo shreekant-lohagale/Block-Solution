@@ -209,7 +209,9 @@ export default function HomePage() {
                 asChild
                 className="hero-btn border-primary text-primary hover:bg-primary/20 hover:text-primary transition-colors duration-300"
               >
-                <Link href="/contact">Get in Touch</Link>
+                <Link href="/contact">
+                Get in Touch
+                </Link>
               </Button>
             </div>
           </div>

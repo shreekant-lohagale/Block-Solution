@@ -2,6 +2,7 @@ import type { Metadata } from 'next';
 import { Inter, Manrope } from 'next/font/google';
 import './globals.css';
 import { cn } from '@/lib/utils';
+import Image from 'next/image';
 
 // Component Imports
 import { ThemeProvider } from '@/components/theme-provider';
@@ -24,6 +25,9 @@ const fontManrope = Manrope({
 export const metadata: Metadata = {
   title: 'NovaStack Solutions - Innovating Blockchain Solutions',
   description: 'NovaStack Solutions is dedicated to building innovative solutions on blockchain technology and providing expert Web3 services.',
+  icons: {
+    icon: '/img/nova_stackzdsds.jpg',
+  },
 };
 
 export default function RootLayout({
@@ -57,3 +61,4 @@ export default function RootLayout({
     </html>
   );
 }
+
